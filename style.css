@@ -97,7 +97,7 @@ body {
     height: 750px;
     border-radius: 50%;
     position: absolute;
-    background-color: #22973f;
+    background-color: #8fe6a3;
 }
 
 .sliderImg {
@@ -228,6 +228,91 @@ body {
     background-color: #8fe6a3;
     position: relative;
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.payment {
+    width: 600px;
+    height: 500px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px 50px;
+    display: none;
+    flex-direction: column;
+    -webkit-box-shadow: 3px 6px 9px 2px #095721; 
+box-shadow: 3px 6px 9px 2px #095721;
+
+}
+
+.payTitle {
+    font-size: 20px;
+    color: black;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.payInput {
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid gray ;
+}
+
+.payInput::placeholder {
+    color: rgb(128, 125, 125);
+}
+
+.cardIcons {
+    display: flex;    
+}
+
+.cardIcon {
+    margin-right: 10px;
+}
+
+.cardInfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sm {
+    width: 30%;
+}
+
+.payButton {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    left: 0;
+    bottom: -40px;
+    background-color: #22973f;
+    -webkit-box-shadow: 3px 6px 9px 2px #095721; 
+    box-shadow: 3px 6px 9px 2px #095721;
+    color: white;
+    border: none;
+    cursor: pointer;    
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: gray;
+    color: white;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px;
 }
 
 .productImg {
