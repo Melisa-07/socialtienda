@@ -150,3 +150,38 @@ productButton.addEventListener("click", () => {
 close.addEventListener("click", () => {
   payment.style.display = "none";
 });
+
+
+ // Elementos del slider
+    var sliderWrapper = document.querySelector('.sliderWrapper');
+    var sliderItems = document.querySelectorAll('.sliderItem');
+    var itemWidth = sliderItems[0].offsetWidth;
+    var currentIndex = 0;
+
+    // Flechas para cambiar los items
+    var prevButton = document.getElementById('prevButton');
+    var nextButton = document.getElementById('nextButton');
+
+    // Evento para avanzar al siguiente item
+    nextButton.addEventListener('click', function() {
+      if (currentIndex < sliderItems.length - 1) {
+        currentIndex++;
+        actualizarSlider();
+      }
+    });
+
+    // Evento para retroceder al item anterior
+    prevButton.addEventListener('click', function() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        actualizarSlider();
+      }
+    });
+
+    // Función para actualizar la posición del slider
+    function actualizarSlider() {
+      var position = -currentIndex * itemWidth;
+      sliderWrapper.style.transform = 'translateX(' + position + 'px)';
+    }
+
+
