@@ -16,20 +16,20 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" />
     <title>Club Deportivo y Social lux</title>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <nav class="navbar sticky-top navbar-expand-md">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="fs-5 navbar-brand mb-2" href="#">
           <img
             src="img/Social-logo.png"
             alt="Logo"
-            width="50"
-            height="80"
+            width="60"
+            height="100"
             class="d-inline-block align-text-center"
           />
           CLUB DEPORTIVO Y SOCIAL LUX
@@ -48,31 +48,67 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-underline">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Inicio</a>
+              <a class="nav-link" aria-current="page" href="#">INICIO</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                DISCIPLINAS
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                  <a class="dropdown-item" href="#"> FÚTBOL <i class="fa fa-caret-right" aria-hidden="true"></i> </a>
+                  <ul class="dropdown-menu dropdown-submenu">
+                    <li>
+                      <a class="dropdown-item" href="#">FÚTBOL MASCULINO</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">FÚTBOL FEMENINO</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"> FUTSAL <i class="fa fa-caret-right" aria-hidden="true"></i> </a>
+                  <ul class="dropdown-menu dropdown-submenu">
+                    <li>
+                      <a class="dropdown-item" href="#">FUTSAL MASCULINO</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">FUTSAL FEMENINO</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">PATÍN</a>
+                </li>
+                <li><a class="dropdown-item" href="#">HOCKEY FEMENINO</a></li>
+              </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#disciplinas">Disciplinas</a>
+              <a class="nav-link" href="#tienda">TIENDA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#tienda">Tienda</a>
+              <a class="nav-link" href="#historia">HISTORIA</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#historia">Historia</a>
+              <a class="nav-link" href="#sponsors">SPONSORS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sponsors">Sponsors</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacto">Contacto</a>
+              <a class="nav-link" href="#contacto">CONTACTO</a>
             </li>
             <form class="d-flex" role="search">
               <input
-                class="form-control me-2"
+                class="form-control rounded-pill me-2"
                 type="search"
                 placeholder="Búsqueda"
                 aria-label="Search"
               />
-              <button class="btn btn-outline-success" type="submit">
+              <button class="btn btn text-white" type="submit">
                 <span class="material-symbols-outlined"> search </span>
               </button>
             </form>
@@ -81,276 +117,21 @@
       </div>
     </nav>
 
-    <!-- DISCIPLINAS -->
-    <h1 class="galleryDisciplines" id="disciplinas">DISCIPLINAS</h1>
-    <div class="gallery">
-      <div class="galleryItem">
-        <img
-          src="img/pexels-markus-spiske-114296.jpg"
-          alt=""
-          class="galleryImg"
-        />
-        <h1 class="galleryTitle">Fútbol masculino</h1>
-      </div>
-      <div class="galleryItem">
-        <h1 class="galleryTitle">Fútbol femenino</h1>
-        <img src="img/pexels-rfstudio-3886235.jpg" alt="" class="galleryImg" />
-      </div>
-      <div class="galleryItem">
-        <img
-          src="img/jorgen-hendriksen-futsmasc.jpg"
-          alt=""
-          class="galleryImg"
-        />
-        <h1 class="galleryTitle">Futsal masculino</h1>
-      </div>
-      <div class="galleryItem">
-        <h1 class="galleryTitle">Futsal femenino</h1>
-        <img src="img/braden-hopkins-futfem.jpg" alt="" class="galleryImg" />
-      </div>
-      <div class="galleryItem">
-        <img src="img/hockey.jpg" alt="" class="galleryImg" />
-        <h1 class="galleryTitle">Hockey femenino</h1>
-      </div>
-      <div class="galleryItem">
-        <h1 class="galleryTitle">Patinaje mixto</h1>
-        <img
-          src="img/pexels-laura-stanley-2005992.jpg"
-          alt=""
-          class="galleryImg"
-        />
-      </div>
+    <!-- BURBUJA DE CONTACTOS -->
+    <div id="circle-container">
+      <i class="fa-solid fa-circle-user fa-3x"></i>
+      <ul id="social-icons">
+        <li><a class="social-icon" href="https://www.instagram.com/clubdeportivolux/" target="_blank"><i class="fa-brands fa-instagram contact"></i></a></li>
+        <li><a class="social-icon" href="#" target="_blank"><i class="fa-brands fa-whatsapp contact"></i></a></li>
+        <li><a class="social-icon" href="https://maps.app.goo.gl/TbhERA8KmyMDmUBm9" target="_blank"><i class="fa-solid fa-location-dot contact"></i></a></li>
+      </ul>
     </div>
 
-    <!-- SLIDER TIENDA - PRODUCTOS -->
-    <!-- <div class="sliderTienda">
-        <h3 class="menuItems">REMERA</h3>
-        <h3 class="menuItems">SHORT</h3>
-        <h3 class="menuItems">BUZO</h3>
-        <h3 class="menuItems">TAZA</h3>
-        <h3 class="menuItems">PIN</h3>
-        <h3 class="menuItems">STICKER</h3>
-    </div> -->
-    <h1 class="tiendaTitle" id="tienda">TIENDA</h1>
-    <div class="slider">
-      <div class="sliderWrapper">
-        <div class="sliderItem menuItems">
-          <img
-            src=""
-            alt="REMERA"
-            class="sliderImg"
-            style="height: 300px; width: 200px; padding: 20px"
-          />
-          <div class="sliderBg"></div>
-          <h1 class="sliderTitle">
-            REMERA<br />
-            NUEVA<br />
-            TEMPORADA
-          </h1>
-          <h2 class="sliderPrice">$0.00</h2>
-          <a href="#product">
-            <button class="buyButton">COMPRAR</button>
-          </a>
-        </div>
-        <div class="sliderItem menuItems">
-          <img
-            src=""
-            alt="SHORT"
-            class="sliderImg"
-            style="height: 250px; width: 200px; padding: 20px"
-          />
-          <div class="sliderBg"></div>
-          <h1 class="sliderTitle">
-            SHORT<br />
-            NUEVA<br />
-            TEMPORADA
-          </h1>
-          <h2 class="sliderPrice">$0.00</h2>
-          <a href="#product">
-            <button class="buyButton">COMPRAR</button>
-          </a>
-        </div>
-        <div class="sliderItem menuItems">
-          <img
-            src=""
-            alt="BUZO"
-            class="sliderImg"
-            style="height: 300px; width: 200px; padding: 20px"
-          />
-          <div class="sliderBg"></div>
-          <h1 class="sliderTitle">
-            BUZO<br />
-            NUEVA<br />
-            TEMPORADA
-          </h1>
-          <h2 class="sliderPrice">$0.00</h2>
-          <a href="#product">
-            <button class="buyButton">COMPRAR</button>
-          </a>
-        </div>
-        <div class="sliderItem menuItems">
-          <img
-            src=""
-            alt="TAZA"
-            class="sliderImg"
-            style="height: 300px; width: 200px; padding: 20px"
-          />
-          <div class="sliderBg"></div>
-          <h1 class="sliderTitle">
-            PRODUCTO<br />
-            NUEVA<br />
-            TEMPORADA
-          </h1>
-          <h2 class="sliderPrice">$0.00</h2>
-          <a href="#product">
-            <button class="buyButton">COMPRAR</button>
-          </a>
-        </div>
-        <div class="sliderItem menuItems">
-          <img
-            src=""
-            alt="PIN"
-            class="sliderImg"
-            style="height: 300px; width: 200px; padding: 20px"
-          />
-          <div class="sliderBg"></div>
-          <h1 class="sliderTitle">
-            PRODUCTO<br />
-            NUEVA<br />
-            TEMPORADA
-          </h1>
-          <h2 class="sliderPrice">$0.00</h2>
-          <a href="#product">
-            <button class="buyButton">COMPRAR</button>
-          </a>
-        </div>
-        <div class="sliderItem menuItems">
-          <img
-            src=""
-            alt="STICKER"
-            class="sliderImg"
-            style="height: 300px; width: 200px; padding: 20px"
-          />
-          <div class="sliderBg"></div>
-          <h1 class="sliderTitle">
-            PRODUCTO<br />
-            NUEVA<br />
-            TEMPORADA
-          </h1>
-          <h2 class="sliderPrice">$0.00</h2>
-          <a href="#product">
-            <button class="buyButton">COMPRAR</button>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- BOTONES PARA AVANZAR ENTRE LOS PRODUCTOS -->
-    <div class="buttonsMove">
-      <button id="prevButton">
-        <span class="material-symbols-outlined sm"> arrow_back_ios </span>
-      </button>
-      <button id="nextButton">
-        <span class="material-symbols-outlined xs"> arrow_forward_ios </span>
-      </button>
-    </div>
-
-    <!-- ENTREGA DE PRODUCTOS -->
-    <div class="features">
-      <div class="feature">
-        <img src="img/shipping.png" alt="" class="featureIcon" />
-        <span class="featureTitle">ENTREGA</span>
-        <span class="featureDesc"
-          >Abonás y con el comprobante de pago retirás en secretaría del
-          club.</span
-        >
-      </div>
-      <div class="feature">
-        <img src="img/return.png" alt="" class="featureIcon" />
-        <span class="featureTitle">CAMBIOS</span>
-        <span class="featureDesc"
-          >Se podrán realizar cambios de productos dentro de 15 días desde su
-          compra.</span
-        >
-      </div>
-      <div class="feature">
-        <img src="img/contact.png" alt="" class="featureIcon" />
-        <span class="featureTitle">CONTACTANOS</span>
-        <span class="featureDesc"
-          >Si tenés alguna consulta podés enviar un mensaje a nuestro
-          mail.</span
-        >
-      </div>
-    </div>
-
-    <!-- PRODUCTO -->
-    <div class="product" id="product">
-      <img src="" alt="REMERA" class="productImg" />
-      <div class="productDetails">
-        <h1 class="productTitle">REMERA DE ENTRENAMIENTO</h1>
-        <h2 class="productPrice">$0.00</h2>
-        <p class="productDesc">
-          Lorem ipsum dolor sit amet consectetur impal adipisicing elit. Alias
-          assumenda dolorum doloremque sapiente aliquid aperiam.
-        </p>
-        <div class="colors">
-          <div class="color"></div>
-          <div class="color"></div>
-          <div class="color"></div>
-        </div>
-        <div class="sizes">
-          <div class="size">14</div>
-          <div class="size">15</div>
-          <div class="size">16</div>
-        </div>
-        <button class="productButton">COMPRAR AHORA!</button>
-      </div>
-
-      <!-- PAGO -->
-      <div class="payment">
-        <h1 class="payTitle">Información personal</h1>
-        <label for="">Nombre y Apellido</label>
-        <input
-          type="text"
-          placeholder="Nombre Ejemplo"
-          id=""
-          class="payInput"
-          required
-        />
-        <label for="">Teléfono</label>
-        <input
-          type="text"
-          placeholder="+54 123 456 6789"
-          id=""
-          class="payInput"
-          required
-        />
-        <label for="">Domicilio</label>
-        <input
-          type="text"
-          placeholder=" P. Sherman, calle Wallaby, 42, Sydney"
-          id=""
-          class="payInput"
-          required
-        />
-        <h1 class="payTitle">Método de pago</h1>
-        <div class="cardIcons">
-          <img src="img/visa.png" alt="" width="40" class="cardIcon" />
-          <img src="img/master.png" alt="" width="40" class="cardIcon" />
-        </div>
-        <input
-          type="password"
-          placeholder="Número de tarjeta"
-          id=""
-          class="payInput"
-        />
-        <div class="cardInfo">
-          <input type="text" placeholder="Mes" class="payInput sm" />
-          <input type="text" placeholder="Año" class="payInput sm" />
-          <input type="text" placeholder="Cvv" class="payInput sm" />
-        </div>
-        <button class="payButton">Confirmar pago</button>
-        <span class="close">X</span>
+    <!-- IMAGEN DE INICIO -->
+    <div id="image-overlay">
+      <img src="img/sociallux-vista3d-transformed.png" alt="Descripción de la imagen">
+      <div id="overlay">
+        <p>EL MÁS GRANDE DE LUDUEÑA</p>
       </div>
     </div>
 
@@ -358,7 +139,6 @@
     <h1 class="timelineTitle" id="historia">UN POCO DE HISTORIA</h1>
     <div class="container">
       <div class="main-timeline">
-    
         <div class="timeline">
           <div class="icon"></div>
           <div class="date-content">
@@ -372,12 +152,13 @@
           <div class="timeline-content">
             <h5 class="title">Fundación</h5>
             <p class="description">
-                Los fundadores fueron dos hermanos, uno de ellos era carnicero y su negocio compartía local con un almacén que se llamaba “Mercadito Lux”.
+              Los fundadores fueron dos hermanos, uno de ellos era carnicero y
+              su negocio compartía local con un almacén que se llamaba
+              “Mercadito Lux”.
             </p>
           </div>
-        </div>     
+        </div>
 
-       
         <div class="timeline">
           <div class="icon"></div>
           <div class="date-content">
@@ -391,11 +172,11 @@
           <div class="timeline-content">
             <h5 class="title">Club Deportivo y Social Lux</h5>
             <p class="description">
-                Se obtiene la Personería Jurídica, desde entonces se transformó en el Club Deportivo y Social Lux.
+              Se obtiene la Personería Jurídica, desde entonces se transformó en
+              el Club Deportivo y Social Lux.
             </p>
           </div>
         </div>
-        
 
         <div class="timeline">
           <div class="icon"></div>
@@ -410,11 +191,13 @@
           <div class="timeline-content">
             <h5 class="title">Primer campeonato</h5>
             <p class="description">
-                Se obtiene el ascenso, año en el cual fue campeón de la B y pudo levantar la Copa Santiago Pinasco. Fue alcanzado nuevamente en el año 2006, donde no fue campeón pero ascendió junto a Sagrado Corazón y 7 de Septiembre. Desde el 2019 continúa en la categoría.
-                </p>
+              Se obtiene el ascenso, año en el cual fue campeón de la B y pudo
+              levantar la Copa Santiago Pinasco. Fue alcanzado nuevamente en el
+              año 2006, donde no fue campeón pero ascendió junto a Sagrado
+              Corazón y 7 de Septiembre. Desde el 2019 continúa en la categoría.
+            </p>
           </div>
         </div>
-        
 
         <div class="timeline">
           <div class="icon"></div>
@@ -429,35 +212,48 @@
           <div class="timeline-content">
             <h5 class="title">Fútbol femenino</h5>
             <p class="description">
-                Un día llegó un grupo de chicas con un proyecto, quienes fueron recibidas por Adriana Lofiego, gran futbolera además. Desde aquel momento supieron llevar la camiseta como bandera. 
+              Un día llegó un grupo de chicas con un proyecto, quienes fueron
+              recibidas por Adriana Lofiego, gran futbolera además. Desde aquel
+              momento supieron llevar la camiseta como bandera.
             </p>
           </div>
         </div>
 
         <div class="timeline">
-            <div class="icon"></div>
-            <div class="date-content">
-              <div class="date-outer">
-                <span class="date">
-                  <span class="month"></span>
-                  <span class="year">2018</span>
-                </span>
-              </div>
-            </div>
-            <div class="timeline-content">
-              <h5 class="title">Reconocimiento del Concejo Municipal de Rosario</h5>
-              <p class="description">
-                Institución pionera a nivel local y nacional en el desarrollo del fútbol femenino, cumpliendo una importante función en la promoción de la lucha por la igualdad de género.
-              </p>
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
+                <span class="year">2018</span>
+              </span>
             </div>
           </div>
-        
+          <div class="timeline-content">
+            <h5 class="title">
+              Reconocimiento del Concejo Municipal de Rosario
+            </h5>
+            <p class="description">
+              Institución pionera a nivel local y nacional en el desarrollo del
+              fútbol femenino, cumpliendo una importante función en la promoción
+              de la lucha por la igualdad de género.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
+    <script src="https://kit.fontawesome.com/137f813a12.js" crossorigin="anonymous"></script>
+   
+
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
       crossorigin="anonymous"
     ></script>
 

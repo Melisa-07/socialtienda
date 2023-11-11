@@ -1,3 +1,4 @@
+
 const wrapper = document.querySelector(".sliderWrapper");
 const menuItems = document.querySelectorAll(".menuItems");
 
@@ -183,5 +184,4 @@ close.addEventListener("click", () => {
       var position = -currentIndex * itemWidth;
       sliderWrapper.style.transform = 'translateX(' + position + 'px)';
     }
-
 
