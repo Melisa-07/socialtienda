@@ -2,8 +2,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -11,133 +12,167 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Club Deportivo y Social lux</title>
   </head>
 
   <body>
-    <nav class="navbar sticky-top navbar-expand-md">
-      <div class="container-fluid">
-        <a class="fs-5 navbar-brand mb-2" href="#">
+    <!-- BARRA NAVEGADORA -->
+    <header class="primary-header">
+      <div class="navigation">
+        <button class="navigation-toggle button-has-icon">
+          <span class="button-icon">
+            <svg viewBox="0 0 20 20" class="button-icon-img button-toggle-img">
+              <g data-name="Layer 1">
+                <line
+                  y1="1"
+                  x2="20"
+                  y2="1"
+                  fill="none"
+                  stroke="#000"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></line>
+                <line
+                  y1="7"
+                  x2="20"
+                  y2="7"
+                  fill="none"
+                  stroke="#000"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></line>
+                <line
+                  y1="13"
+                  x2="20"
+                  y2="13"
+                  fill="none"
+                  stroke="#000"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></line>
+                <line
+                  y1="19"
+                  x2="20"
+                  y2="19"
+                  fill="none"
+                  stroke="#000"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                ></line>
+              </g>
+            </svg>
+          </span>
+        </button>
+
+        <a href="" class="navigation-logo">
           <img
             src="img/Social-logo.png"
-            alt="Logo"
-            width="60"
-            height="100"
-            class="d-inline-block align-text-center"
+            alt="Social lux logo"
+            class="logo-image"
           />
-          CLUB DEPORTIVO Y SOCIAL LUX
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-underline">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">INICIO</a>
+        <nav class="main-navigation">
+          <ul class="navigation-list">
+            <li class="navigation-item">
+              <a href="" class="navigation-link">INICIO</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                DISCIPLINAS
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li>
-                  <a class="dropdown-item" href="#"> FÚTBOL <i class="fa fa-caret-right" aria-hidden="true"></i> </a>
-                  <ul class="dropdown-menu dropdown-submenu">
-                    <li>
-                      <a class="dropdown-item" href="#">FÚTBOL MASCULINO</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">FÚTBOL FEMENINO</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#"> FUTSAL <i class="fa fa-caret-right" aria-hidden="true"></i> </a>
-                  <ul class="dropdown-menu dropdown-submenu">
-                    <li>
-                      <a class="dropdown-item" href="#">FUTSAL MASCULINO</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">FUTSAL FEMENINO</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">PATÍN</a>
-                </li>
-                <li><a class="dropdown-item" href="#">HOCKEY FEMENINO</a></li>
-              </ul>
+            <li class="navigation-item">
+              <a href="" class="navigation-link">DISCIPLINAS</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#tienda">TIENDA</a>
+            <li class="navigation-item">
+              <a href="" class="navigation-link">TIENDA</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#historia">HISTORIA</a>
+            <li class="navigation-item">
+              <a href="" class="navigation-link">HISTORIA</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#sponsors">SPONSORS</a>
+            <li class="navigation-item">
+              <a href="" class="navigation-link">CONTACTO</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacto">CONTACTO</a>
+            <li class="navigation-item">
+              <a href="" class="navigation-link">SPONSORS</a>
             </li>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control rounded-pill me-2"
-                type="search"
-                placeholder="Búsqueda"
-                aria-label="Search"
-              />
-              <button class="btn btn text-white" type="submit">
-                <span class="material-symbols-outlined"> search </span>
-              </button>
-            </form>
+            <li class="navigation-item">
+              <a href="" class="navigation-link">MERCADITO EN EL RECUERDO</a>
+            </li>
           </ul>
+        </nav>
+        <div class="navigation-icon-group">
+          <button type="button" class="btn btn text-white button-has-icon">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </button>
+          <button class="btn btn text-white button-has-icon" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </div>
       </div>
-    </nav>
+    </header>
 
     <!-- BURBUJA DE CONTACTOS -->
     <div id="circle-container">
       <i class="fa-solid fa-circle-user fa-3x"></i>
       <ul id="social-icons">
-        <li><a class="social-icon" href="https://www.instagram.com/clubdeportivolux/" target="_blank"><i class="fa-brands fa-instagram contact"></i></a></li>
-        <li><a class="social-icon" href="#" target="_blank"><i class="fa-brands fa-whatsapp contact"></i></a></li>
-        <li><a class="social-icon" href="https://maps.app.goo.gl/TbhERA8KmyMDmUBm9" target="_blank"><i class="fa-solid fa-location-dot contact"></i></a></li>
+        <li>
+          <a
+            class="social-icon"
+            href="https://www.instagram.com/clubdeportivolux/"
+            target="_blank"
+            ><i class="fa-brands fa-instagram contact"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            class="social-icon"
+            href="https://wa.me/+543415045593"
+            target="_blank"
+            ><i class="fa-brands fa-whatsapp contact"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            class="social-icon"
+            href="https://maps.app.goo.gl/TbhERA8KmyMDmUBm9"
+            target="_blank"
+            ><i class="fa-solid fa-location-dot contact"></i
+          ></a>
+        </li>
+        <li>
+          <a class="social-icon" href="" target="_blank"
+            ><i class="fa-regular fa-paper-plane contact"></i
+          ></a>
+        </li>
       </ul>
     </div>
 
     <!-- IMAGEN DE INICIO -->
     <div id="image-overlay">
-      <img src="img/sociallux-vista3d-transformed.png" alt="Descripción de la imagen">
+      <img src="" alt="Hinchada" />
       <div id="overlay">
         <p>EL MÁS GRANDE DE LUDUEÑA</p>
       </div>
     </div>
 
     <!-- HISTORIA - LÍNEA DE TIEMPO -->
-    <h1 class="timelineTitle" id="historia">UN POCO DE HISTORIA</h1>
+
     <div class="container">
+      <h1 class="timelineTitle" id="historia">UN POCO DE HISTORIA</h1>
       <div class="main-timeline">
         <div class="timeline">
           <div class="icon"></div>
@@ -152,9 +187,8 @@
           <div class="timeline-content">
             <h5 class="title">Fundación</h5>
             <p class="description">
-              Los fundadores fueron dos hermanos, uno de ellos era carnicero y
-              su negocio compartía local con un almacén que se llamaba
-              “Mercadito Lux”.
+              Los fundadores fueron dos hermanos, el negocio de uno de ellos
+              compartía local con un almacén que se llamaba “Mercadito Lux”.
             </p>
           </div>
         </div>
@@ -184,7 +218,45 @@
             <div class="date-outer">
               <span class="date">
                 <span class="month"></span>
+                <span class="year">1989</span>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">Ingreso a la Asocación Rosarina</h5>
+            <p class="description">
+              El club comienza a formar parte de la Asociación Rosarina.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
+                <span class="year">1994</span>
+                <i class="fa-solid fa-signature"></i>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">Firma de los terrenos</h5>
+            <p class="description">
+              Se realiza la firma por la potestad de los terrenos.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline hidden">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
                 <span class="year">1995</span>
+                <i class="fa-solid fa-trophy"></i>
               </span>
             </div>
           </div>
@@ -192,14 +264,32 @@
             <h5 class="title">Primer campeonato</h5>
             <p class="description">
               Se obtiene el ascenso, año en el cual fue campeón de la B y pudo
-              levantar la Copa Santiago Pinasco. Fue alcanzado nuevamente en el
-              año 2006, donde no fue campeón pero ascendió junto a Sagrado
-              Corazón y 7 de Septiembre. Desde el 2019 continúa en la categoría.
+              levantar la Copa Santiago Pinasco.
             </p>
           </div>
         </div>
 
-        <div class="timeline">
+        <div class="timeline hidden">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
+                <span class="year">2006</span>
+                <i class="fa-solid fa-medal"></i>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">2° Ascenso</h5>
+            <p class="description">
+              Alcanzado nuevamente, donde no fue campeón pero ascendió junto a
+              Sagrado Corazón y 7 de Septiembre.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline hidden">
           <div class="icon"></div>
           <div class="date-content">
             <div class="date-outer">
@@ -219,13 +309,33 @@
           </div>
         </div>
 
-        <div class="timeline">
+        <div class="timeline hidden">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
+                <span class="year">2017</span>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">Dos acontecimientos muy importantes</h5>
+            <p class="description">
+              En primer lugar el Ascenso de inferiores a la A1. Y se inaugura el
+              playón, lo que permite sumar nuevas disciplinas.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline hidden">
           <div class="icon"></div>
           <div class="date-content">
             <div class="date-outer">
               <span class="date">
                 <span class="month"></span>
                 <span class="year">2018</span>
+                <i class="fa-solid fa-award"></i>
               </span>
             </div>
           </div>
@@ -240,11 +350,163 @@
             </p>
           </div>
         </div>
+
+        <div class="timeline hidden">
+          <!-- <div class="icon"></div> -->
+          <!-- <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
+                <span class="year">2018</span>
+              </span>
+            </div>
+          </div> -->
+          <div class="timeline-content">
+            <h5 class="title">Categoría B femenina</h5>
+            <p class="description">
+              Se forma la categoría B de fútbol femenino.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline hidden">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
+                <span class="year">2019</span>
+                <i class="fa-solid fa-ranking-star"></i>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">Ascenso masculino</h5>
+            <p class="description">
+              Nuevamente logra ascender a la categoría A, manteniendose hasta la
+              fecha.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline hidden">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
+                <span class="year">2021</span>
+                <i class="fa-solid fa-trophy"></i>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">Campeonato de la categoría B femenina</h5>
+            <p class="description">
+              Nuevamente logra ascender a la categoría A, manteniendose hasta la
+              fecha.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline hidden">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
+                <span class="year">2022</span>
+                <i class="fa-solid fa-trophy"></i>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">Campeonato de la categoría A femenina</h5>
+            <p class="description">
+              Logra levantar la copa de campeonas la categoría A.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline hidden">
+          <div class="icon"></div>
+          <div class="date-content">
+            <div class="date-outer">
+              <span class="date">
+                <span class="month"></span>
+                <span class="year">2023</span>
+              </span>
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h5 class="title">Concesión de las canchas</h5>
+            <p class="description">
+              La concesión de las canchas de fútbol 5 y 7 de césped sintético
+              vuelven a ser potestad del club.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="expand-arrows" onclick="expandTimeline()">
+        <i class="fa-solid fa-arrow-down"></i>
+        <!-- <i class="fa-solid fa-arrow-down"></i> -->
       </div>
     </div>
 
-    <script src="https://kit.fontawesome.com/137f813a12.js" crossorigin="anonymous"></script>
-   
+    <!-- SPONSORS -->
+    <div class="sponsors-section">
+      <h1>QUIENES NOS ACOMPAÑAN</h1>
+      <div class="sponsors-list">
+        <img src="" alt="Sponsor 1" class="sponsor-image" />
+        <img src="" alt="Sponsor 2" class="sponsor-image" />
+        <img src="" alt="Sponsor 3" class="sponsor-image" />
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>El Club</h4>
+            <ul>
+              <li><a href="#">Acerca de nosotros</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Más información</h4>
+            <ul>
+              <li><a href="#">Cursos de la municipalidad</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Tienda online</h4>
+            <ul>
+              <li><a href="#">Productos</a></li>
+              <li><a href="#">Devoluciones</a></li>
+              <li><a href="#">Formas de pago</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Seguinos</h4>
+            <div class="social-links">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <p>
+              Club deportivo y social Lux © 2023 Todos los derechos reservados ·
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/137f813a12.js"
+      crossorigin="anonymous"
+    ></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
