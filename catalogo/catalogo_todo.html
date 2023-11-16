@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="catalogo.css" >
 
-    <title>Todos los productos</title>
+    <title>Catálogo</title>
   </head>
 
     <body>
@@ -26,12 +26,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-underline">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/index.html">Volver</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contacto">Contáctenos</a>
-                        </li>
                         <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search"/>
                             <button class="btn btn-outline-success" type="submit">
                                 <span class="material-symbols-outlined"> search </span>
@@ -40,10 +34,26 @@
                 </div>
             </div>
         </nav>
-        
-        
-    
-
+        <main class="main_catalogo">
+            <div class="section_catalogo">
+                <h2  class="subtitle">Escoja un producto para ver detalles ó filtre según preferencias</h2>
+                <hr>
+                <div class="filter_plus_products">
+                    <div class="filter_list">
+                        <a class="a_item" href="#" category="all">Todo</a>
+                        <a class="a_item" href="#" category="conjuntos">Conjuntos</a>
+                        <a class="a_item" href="#" category="remeras">Remeras</a>
+                        <a class="a_item" href="#" category="shorts">Shorts</a>
+                        <a class="a_item" href="#" category="pantalones">Pantalones</a>
+                        <a class="a_item" href="#" category="accesorios">Accesorios</a>
+                        <a class="a_item" href="#" category="otros">Otros</a>
+                    </div>
+                    <div class="products_list" id="productsList">
+                        <!-- dinamic content -->
+                    </div>
+                </div>
+            </div>
+        </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="/app.js"></script>
         <script src="catalogo.js"></script>

@@ -1,124 +1,119 @@
 const productos = [
     {
       id: 1,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 1",
       price: 19.99,
       description: "Descripción del Producto 1",
-      size: ""
+      size: "S, M, L"
     },
     {
       id: 2,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 2",
       price: 29.99,
       description: "Descripción del Producto 2",
-      size: ""
+      size: "XS, XL"
     },
     {
       id: 3,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 3",
       price: 39.99,
       description: "Descripción del Producto 3",
-      size: ""
+      size: "S, M, Xl"
     },
     {
       id: 4,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 4",
       price: 49.99,
       description: "Descripción del Producto 4",
-      size: ""
+      size: "S, M, Xl"
     },
     {
       id: 5,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 5",
       price: 59.99,
       description: "Descripción del Producto 5",
-      size: ""
+      size: "XS,M, XL"
     },
     {
       id: 6,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 6",
       price: 69.99,
       description: "Descripción del Producto 6",
-      size: ""
+      size: "XL"
     },
     {
       id: 7,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 7",
       price: 79.99,
       description: "Descripción del Producto 7",
-      size: ""
+      size: "S, L, XL"
     },
     {
       id: 8,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 8",
       price: 89.99,
       description: "Descripción del Producto 8",
-      size: ""
+      size: "M, L"
     },
     {
       id: 9,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 9",
       price: 99.99,
-      description: "Descripción del Producto 9"
+      description: "Descripción del Producto 9",
+      size: "M, L, XL"
     },
     {
       id: 10,
-      image: "",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBtJLdLLsQMOnaBm9Om5mnMkZ3UQLk5vqYrA&usqp=CAU",
       title: "Producto 10",
       price: 109.99,
       description: "Descripción del Producto 10",
-      size: ""
-    },
-    {
-      id: 11,
-      image: "",
-      title: "Producto 11",
-      price: 119.99,
-      description: "Descripción del Producto 11",
-      size: ""
-    },
-    {
-      id: 12,
-      image: "",
-      title: "Producto 12",
-      price: 129.99,
-      description: "Descripción del Producto 12",
-      size: ""
-    },
-    {
-      id: 13,
-      image: "",
-      title: "Producto 13",
-      price: 139.99,
-      description: "Descripción del Producto 13",
-      size: ""
-    },
-    {
-      id: 14,
-      image: "",
-      title: "Producto 14",
-      price: 149.99,
-      description: "Descripción del Producto 14",
-      size: ""
-    },
-    {
-      id: 15,
-      image: "",
-      title: "Producto 15",
-      price: 159.99,
-      description: "Descripción del Producto 15",
-      size: ""
+      size: "XXL"
     }
 ];
 
 console.log(productos);
-  
+
+document.addEventListener('DOMContentLoaded', function () {
+  var productsListContainer = document.getElementById('productsList');
+
+  function createElement(tag, className, textContent, src) {
+    var element = document.createElement(tag);
+    if (className) element.classList.add(className);
+    if (textContent) element.textContent = textContent;
+    if (src) element.src = src;
+    return element;
+  }
+
+  productos.forEach(function (producto) {
+    var productElement = createElement('div', 'product_item');
+    productElement.setAttribute('category', 'remeras');
+
+    productElement.appendChild(createElement('img', undefined, undefined, producto.image));
+    
+    var productContent = createElement('div', 'contenido_producto');
+    productContent.appendChild(createElement('h2', undefined, producto.title));
+    productContent.appendChild(createElement('span', undefined, '$ ' + producto.price));
+
+    if (producto.size) {
+      productContent.appendChild(document.createElement('br'));
+      productContent.appendChild(createElement('span', undefined, 'Tallas: ' + producto.size));
+    }
+
+    productContent.appendChild(createElement('p', undefined, producto.description));
+    productElement.appendChild(productContent);
+
+    productElement.appendChild(createElement('a', 'btn_comprar', 'Agregar'));
+    
+    productsListContainer.appendChild(productElement);
+  });
+});
