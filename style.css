@@ -393,6 +393,20 @@ label {
   margin-right: 10px;
   cursor: pointer;
 }
+.container_all_products{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn_all_productos{
+  padding: 10px 20px;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
 
 .productButton {
   float: right;
