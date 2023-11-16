@@ -1,44 +1,83 @@
 //MENU DESPLEGABLE EN DISPOSITIVOS PEQUEÑOS
 const toggleButton = document.querySelector(".navigation-toggle");
 const toggleNavbar = document.querySelector(".navigation");
-// Check if elements are found in the DOM
 if (toggleButton && toggleNavbar) {
   toggleButton.addEventListener("click", () => {
-    // Toggle the 'active' class on the target element
     toggleNavbar.classList.toggle("active");
   });
 }
-// Listener to handle window resize events
+
 window.addEventListener("resize", () => {
   if (window.innerWidth > 1024) {
-    // If the viewport is more than 1024px wide, we assume the dropdown is visible
     toggleNavbar.classList.remove("active");
   }
 });
 
-
 //LINEA DE TIEMPO
-function expandTimeline() {
-  var timeline = document.querySelector('.main-timeline');
-  var allTimelines = document.querySelectorAll('.timeline');
-  var visibleTimelines = document.querySelectorAll('.timeline:not(.hidden)');
-
-  // Muestra los próximos 4 elementos si hay más elementos por mostrar
-  for (var i = visibleTimelines.length; i < visibleTimelines.length + 4; i++) {
-    if (allTimelines[i]) {
-      allTimelines[i].classList.remove('hidden');
-    }
+const slider = document.querySelector(".slider-timeline");
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
+const slides = document.querySelectorAll(".slide");
+const slideIcons = document.querySelectorAll(".slide-icon");
+const numberOfSlides = slides.length;
+var slideNumber = 0;
+//image slider next button 
+nextBtn.addEventListener("click", () => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove("active");
+  });
+  slideNumber++;
+  if (slideNumber > (numberOfSlides - 1)) {
+    slideNumber = 0;
   }
-
-  // Ajusta la altura del contenedor
-  timeline.style.height = timeline.scrollHeight + 'px';
-}
-
-
-
-
-
-
+  slides[slideNumber].classList.add("active");
+  slideIcons[slideNumber].classList.add("active");
+});
+//image slider previous button
+prevBtn.addEventListener("click", () => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove("active");
+  });
+  slideNumber--;
+  if (slideNumber < 0) {
+    slideNumber = numberOfSlides - 1;
+  }
+  slides[slideNumber].classList.add("active");
+  slideIcons[slideNumber].classList.add("active");
+});
+//slider autoplay 
+var playSlider;
+var repeater = () => {
+  playSlider = setInterval(function () {
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+    slideIcons.forEach((slideIcon) => {
+      slideIcon.classList.remove("active");
+    });
+    slideNumber++;
+    if (slideNumber > (numberOfSlides - 1)) {
+      slideNumber = 0;
+    }
+    slides[slideNumber].classList.add("active");
+    slideIcons[slideNumber].classList.add("active");
+  }, 4000);
+};
+repeater();
+//stop the image slider autoplay on mouseover 
+slider.addEventListener("mouseover", () => {
+  clearInterval(playSlider);
+});
+//start the image slider autoplay again on mouseout 
+slider.addEventListener("mouseout", () => {
+  repeater();
+});
 
 
 
@@ -234,4 +273,3 @@ function expandTimeline() {
 //       var position = -currentIndex * itemWidth;
 //       sliderWrapper.style.transform = 'translateX(' + position + 'px)';
 //     }
-
