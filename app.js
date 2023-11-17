@@ -1,187 +1,275 @@
-const wrapper = document.querySelector(".sliderWrapper");
-const menuItems = document.querySelectorAll(".menuItems");
-
-const products = [
-  {
-    id: 1,
-    title: "REMERA DE ENTRENAMIENTO",
-    price: 119,
-    colors: [
-      {
-        code: "black",
-        img: "",
-      },
-      {
-        code: "white",
-        img: "",
-      },
-      {
-        code: "#1d5e2e",
-        img: "",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "SHORT NUEVA TEMPORADA",
-    price: 149,
-    colors: [
-        {
-            code: "black",
-            img: "",
-          },
-          {
-            code: "white",
-            img: "",
-          },
-          {
-            code: "#1d5e2e",
-            img: "",
-          }, 
-    ],
-  },
-  {
-    id: 3,
-    title: "BUZO NUEVA TEMPORADA",
-    price: 109,
-    colors: [
-        {
-            code: "black",
-            img: "",
-          },
-          {
-            code: "white",
-            img: "",
-          },
-          {
-            code: "#1d5e2e",
-            img: "",
-          }, 
-    ],
-  },
-  {
-    id: 4,
-    title: "TAZA",
-    price: 129,
-    colors: [
-      {
-        code: "",
-        img: "",
-      },      
-    ],
-  },
-  {
-    id: 5,
-    title: "PIN",
-    price: 99,
-    colors: [
-      {
-        code: "",
-        img: "",
-      },      
-    ],
-  },
-  {
-    id: 6,
-    title: "STICKER",
-    price: 99,
-    colors: [
-      {
-        code: "",
-        img: "",
-      },      
-    ],
-  },
-];
-
-let choosenProduct = products[0];
-
-const currentProductImg = document.querySelector(".productImg");
-const currentProductTitle = document.querySelector(".productTitle");
-const currentProductPrice = document.querySelector(".productPrice");
-const currentProductColors = document.querySelectorAll(".color");
-const currentProductSizes = document.querySelectorAll(".size");
-
-menuItems.forEach((item, index) => {
-  item.addEventListener("click", () => {
-    //change the current slide
-    wrapper.style.transform = `translateX(${-100 * index}vw)`;
-
-    //CAMBIAR EL PRODUCTO SELECCIONADO
-    choosenProduct = products[index];
-
-    //MODIFICAR EL TEXTO DEL PRODUCTO SELECCIONADO
-    currentProductTitle.textContent = choosenProduct.title;
-    currentProductPrice.textContent = "$" + choosenProduct.price;
-    currentProductImg.src = choosenProduct.colors[0].img;
-
-    //ASIGNAR COLORES A LOS PRODUCTOS
-    currentProductColors.forEach((color, index) => {
-      color.style.backgroundColor = choosenProduct.colors[index].code;
-    });
+//MENU DESPLEGABLE EN DISPOSITIVOS PEQUEÑOS
+const toggleButton = document.querySelector(".navigation-toggle");
+const toggleNavbar = document.querySelector(".navigation");
+if (toggleButton && toggleNavbar) {
+  toggleButton.addEventListener("click", () => {
+    toggleNavbar.classList.toggle("active");
   });
+}
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1024) {
+    toggleNavbar.classList.remove("active");
+  }
 });
 
-currentProductColors.forEach((color, index) => {
-  color.addEventListener("click", () => {
-    currentProductImg.src = choosenProduct.colors[index].img;
+//LINEA DE TIEMPO
+const slider = document.querySelector(".slider-timeline");
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
+const slides = document.querySelectorAll(".slide");
+const slideIcons = document.querySelectorAll(".slide-icon");
+const numberOfSlides = slides.length;
+var slideNumber = 0;
+//image slider next button 
+nextBtn.addEventListener("click", () => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
   });
-});
-
-currentProductSizes.forEach((size, index) => {
-  size.addEventListener("click", () => {
-    currentProductSizes.forEach((size) => {
-      size.style.backgroundColor = "white";
-      size.style.color = "black";
-    });
-    size.style.backgroundColor = "black";
-    size.style.color = "white";
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove("active");
   });
+  slideNumber++;
+  if (slideNumber > (numberOfSlides - 1)) {
+    slideNumber = 0;
+  }
+  slides[slideNumber].classList.add("active");
+  slideIcons[slideNumber].classList.add("active");
 });
-
-const productButton = document.querySelector(".productButton");
-const payment = document.querySelector(".payment");
-const close = document.querySelector(".close");
-
-productButton.addEventListener("click", () => {
-  payment.style.display = "flex";
+//image slider previous button
+prevBtn.addEventListener("click", () => {
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+  slideIcons.forEach((slideIcon) => {
+    slideIcon.classList.remove("active");
+  });
+  slideNumber--;
+  if (slideNumber < 0) {
+    slideNumber = numberOfSlides - 1;
+  }
+  slides[slideNumber].classList.add("active");
+  slideIcons[slideNumber].classList.add("active");
 });
-
-close.addEventListener("click", () => {
-  payment.style.display = "none";
-});
-
-
- // Elementos del slider
-    var sliderWrapper = document.querySelector('.sliderWrapper');
-    var sliderItems = document.querySelectorAll('.sliderItem');
-    var itemWidth = sliderItems[0].offsetWidth;
-    var currentIndex = 0;
-
-    // Flechas para cambiar los items
-    var prevButton = document.getElementById('prevButton');
-    var nextButton = document.getElementById('nextButton');
-
-    // Evento para avanzar al siguiente item
-    nextButton.addEventListener('click', function() {
-      if (currentIndex < sliderItems.length - 1) {
-        currentIndex++;
-        actualizarSlider();
-      }
+//slider autoplay 
+var playSlider;
+var repeater = () => {
+  playSlider = setInterval(function () {
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
     });
-
-    // Evento para retroceder al item anterior
-    prevButton.addEventListener('click', function() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        actualizarSlider();
-      }
+    slideIcons.forEach((slideIcon) => {
+      slideIcon.classList.remove("active");
     });
-
-    // Función para actualizar la posición del slider
-    function actualizarSlider() {
-      var position = -currentIndex * itemWidth;
-      sliderWrapper.style.transform = 'translateX(' + position + 'px)';
+    slideNumber++;
+    if (slideNumber > (numberOfSlides - 1)) {
+      slideNumber = 0;
     }
+    slides[slideNumber].classList.add("active");
+    slideIcons[slideNumber].classList.add("active");
+  }, 4000);
+};
+repeater();
+//stop the image slider autoplay on mouseover 
+slider.addEventListener("mouseover", () => {
+  clearInterval(playSlider);
+});
+//start the image slider autoplay again on mouseout 
+slider.addEventListener("mouseout", () => {
+  repeater();
+});
 
 
+
+
+
+
+
+
+
+
+// const wrapper = document.querySelector(".sliderWrapper");
+// const menuItems = document.querySelectorAll(".menuItems");
+
+// const products = [
+//   {
+//     id: 1,
+//     title: "REMERA DE ENTRENAMIENTO",
+//     price: 119,
+//     colors: [
+//       {
+//         code: "black",
+//         img: "",
+//       },
+//       {
+//         code: "white",
+//         img: "",
+//       },
+//       {
+//         code: "#1d5e2e",
+//         img: "",
+//       },
+//     ],
+//   },
+//   {
+//     id: 2,
+//     title: "SHORT NUEVA TEMPORADA",
+//     price: 149,
+//     colors: [
+//         {
+//             code: "black",
+//             img: "",
+//           },
+//           {
+//             code: "white",
+//             img: "",
+//           },
+//           {
+//             code: "#1d5e2e",
+//             img: "",
+//           }, 
+//     ],
+//   },
+//   {
+//     id: 3,
+//     title: "BUZO NUEVA TEMPORADA",
+//     price: 109,
+//     colors: [
+//         {
+//             code: "black",
+//             img: "",
+//           },
+//           {
+//             code: "white",
+//             img: "",
+//           },
+//           {
+//             code: "#1d5e2e",
+//             img: "",
+//           }, 
+//     ],
+//   },
+//   {
+//     id: 4,
+//     title: "TAZA",
+//     price: 129,
+//     colors: [
+//       {
+//         code: "",
+//         img: "",
+//       },      
+//     ],
+//   },
+//   {
+//     id: 5,
+//     title: "PIN",
+//     price: 99,
+//     colors: [
+//       {
+//         code: "",
+//         img: "",
+//       },      
+//     ],
+//   },
+//   {
+//     id: 6,
+//     title: "STICKER",
+//     price: 99,
+//     colors: [
+//       {
+//         code: "",
+//         img: "",
+//       },      
+//     ],
+//   },
+// ];
+
+// let choosenProduct = products[0];
+
+// const currentProductImg = document.querySelector(".productImg");
+// const currentProductTitle = document.querySelector(".productTitle");
+// const currentProductPrice = document.querySelector(".productPrice");
+// const currentProductColors = document.querySelectorAll(".color");
+// const currentProductSizes = document.querySelectorAll(".size");
+
+// menuItems.forEach((item, index) => {
+//   item.addEventListener("click", () => {
+//     //change the current slide
+//     wrapper.style.transform = `translateX(${-100 * index}vw)`;
+
+//     //CAMBIAR EL PRODUCTO SELECCIONADO
+//     choosenProduct = products[index];
+
+//     //MODIFICAR EL TEXTO DEL PRODUCTO SELECCIONADO
+//     currentProductTitle.textContent = choosenProduct.title;
+//     currentProductPrice.textContent = "$" + choosenProduct.price;
+//     currentProductImg.src = choosenProduct.colors[0].img;
+
+//     //ASIGNAR COLORES A LOS PRODUCTOS
+//     currentProductColors.forEach((color, index) => {
+//       color.style.backgroundColor = choosenProduct.colors[index].code;
+//     });
+//   });
+// });
+
+// currentProductColors.forEach((color, index) => {
+//   color.addEventListener("click", () => {
+//     currentProductImg.src = choosenProduct.colors[index].img;
+//   });
+// });
+
+// currentProductSizes.forEach((size, index) => {
+//   size.addEventListener("click", () => {
+//     currentProductSizes.forEach((size) => {
+//       size.style.backgroundColor = "white";
+//       size.style.color = "black";
+//     });
+//     size.style.backgroundColor = "black";
+//     size.style.color = "white";
+//   });
+// });
+
+// const productButton = document.querySelector(".productButton");
+// const payment = document.querySelector(".payment");
+// const close = document.querySelector(".close");
+
+// productButton.addEventListener("click", () => {
+//   payment.style.display = "flex";
+// });
+
+// close.addEventListener("click", () => {
+//   payment.style.display = "none";
+// });
+
+
+//  // Elementos del slider
+//     var sliderWrapper = document.querySelector('.sliderWrapper');
+//     var sliderItems = document.querySelectorAll('.sliderItem');
+//     var itemWidth = sliderItems[0].offsetWidth;
+//     var currentIndex = 0;
+
+//     // Flechas para cambiar los items
+//     var prevButton = document.getElementById('prevButton');
+//     var nextButton = document.getElementById('nextButton');
+
+//     // Evento para avanzar al siguiente item
+//     nextButton.addEventListener('click', function() {
+//       if (currentIndex < sliderItems.length - 1) {
+//         currentIndex++;
+//         actualizarSlider();
+//       }
+//     });
+
+//     // Evento para retroceder al item anterior
+//     prevButton.addEventListener('click', function() {
+//       if (currentIndex > 0) {
+//         currentIndex--;
+//         actualizarSlider();
+//       }
+//     });
+
+//     // Función para actualizar la posición del slider
+//     function actualizarSlider() {
+//       var position = -currentIndex * itemWidth;
+//       sliderWrapper.style.transform = 'translateX(' + position + 'px)';
+//     }
