@@ -20,20 +20,68 @@ hr{
     text-align: center;
 }
 .filter_list{
-    max-height: 40vh;
-
-}
-.go_back{
-    font-size: 20px;
-    padding: 5px;
-    margin-left: 35px;
-
+    max-height: 42vh;
 }
 .filter_plus_products{
     display: flex;
     margin: 30px;
 }
-.filter_list, .product_item{
+.filter_span{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.btn-filter {
+    margin-left: 18px;
+    width: 120px;
+    display: flex;
+    justify-content:flex-start;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.5s linear;
+    height: 44px;
+}
+.filter_span {
+    font-size: 16px;
+}
+div {
+    position: relative;
+}
+.green {
+    color: rgb(94, 94, 94) !important;
+}
+.green::before {
+    left: -1;
+    content: "";
+    display: block;
+    width: 10%;
+    height: 100%;
+    background-color:#2c8f4e;
+    position: absolute;
+    z-index: -2;
+    transition: all 600ms ease;
+}
+.green:hover::before {
+    width: 100%;
+}
+.green:hover .arrow_update {
+    opacity: 1;
+    left: calc(100% - 20px);
+}
+.arrow_update {
+    margin-top: 2px;
+    font-size: 16px;
+    transition: opacity 600ms ease;
+    opacity: 0;
+    position: absolute;
+    
+}
+.products_list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.product_item{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,27 +95,22 @@ hr{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.a_item{
-    color: rgb(94, 94, 94) !important;
-    text-decoration: none;
+.product_item .visibility-link{
+    position: absolute;
+    left: 200px;
+    top: 5px;
+    color: #8b8b8b !important;
     cursor: pointer;
-    text-align: center;
-    width: 125px;
-    transition: all 1s;
-    padding: 10px;
-}
-.a_item:hover{
-    letter-spacing: 0.09em;
-}
-.products_list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+} 
 .contenido_producto{
-    margin: 5px;
-    padding: 3px;
+    padding: 10px;
     color: rgb(94, 94, 94);
+    width: 235px;
+    display: flex;
+    flex-direction: column;
+}
+.contenido_producto > span {
+    font-size: 15px;
 }
 .contenido_producto>h2{
     font-size: 18px;
@@ -81,4 +124,12 @@ hr{
     cursor: pointer;
     padding: 5px 0px;
     border-radius: 3px;
+    margin-top: 5px;
+}
+.btn_comprar:hover{
+    background-color: #2c8f4e;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.5);
+    letter-spacing: 0.05em;
+    font-size: 16px;
+    transition: all 600ms ease;
 }
