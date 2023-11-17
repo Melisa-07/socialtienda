@@ -15,30 +15,100 @@
   </head>
 
     <body>
-        <nav class="navbar navbar-expand-md bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="/img/Social-logo.png" alt="Logo" width="50" height="80" class="d-inline-block align-text-center" />
-                        CLUB DEPORTIVO Y SOCIAL LUX 
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <header class="primary-header">
+            <div class="navigation">
+                <button class="navigation-toggle button-has-icon">
+                <span class="button-icon">
+                    <svg viewBox="0 0 20 20" class="button-icon-img button-toggle-img">
+                    <g data-name="Layer 1">
+                        <line y1="1"x2="20" y2="1" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" >
+                        </line>
+                        <line y1="7" x2="20" y2="7"  fill="none"  stroke="#000" stroke-miterlimit="10"  stroke-width="2" >
+                        </line>
+                        <line y1="13" x2="20" y2="13" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" >
+                        </line>
+                        <line y1="19"x2="20" y2="19" fill="none" stroke="#000" stroke-miterlimit="10"stroke-width="2">
+                        </line>
+                    </g>
+                    </svg>
+                </span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-underline">
-                        <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search"/>
-                            <button class="btn btn-outline-success" type="submit">
-                                <span class="material-symbols-outlined"> search </span>
-                            </button>
+                <a href="" class="navigation-logo"><img src="/img/Social-logo.png" alt="Social lux logo" class="logo-image"/></a>
+                <nav class="main-navigation">
+                    <ul class="navigation-list">
+                        <li class="navigation-item">
+                        <a href="/index.html" class="navigation-link">INICIO</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">DISCIPLINAS</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">HISTORIA</a>
+                        </li>
+                        <li class="navigation-item">
+                            <a href="/catalogo/catalogo_todo.html" class="navigation-link">TIENDA</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">CONTACTO</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">SPONSORS</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">MERCADITO EN EL RECUERDO</a>
+                        </li>
                     </ul>
+                </nav>
+                <div class="navigation-icon-group">
+                <button type="button" class="btn btn text-white button-has-icon">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </button>
                 </div>
             </div>
-        </nav>
+        </header>
+
         <main class="main_details_product">
             <div class="product_details" id="product_details">
-                <!-- dinamic content -->
+
             </div>
         </main>
+
+        <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="footer-col">
+                  <h4>El Club</h4>
+                  <ul>
+                    <li><a href="#">Acerca de nosotros</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>Más información</h4>
+                  <ul>
+                    <li><a href="#">Cursos de la municipalidad</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>Tienda online</h4>
+                  <ul>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Formas de pago</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>Seguinos</h4>
+                  <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+                <div class="footer-copyright">
+                  <p> Club deportivo y social Lux © 2023 Todos los derechos reservados ·</p>
+                </div>
+              </div>
+            </div>
+          </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="/app.js"></script>

@@ -2,12 +2,15 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"/>
+    rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"  rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"/> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="catalogo.css" >
 
@@ -15,25 +18,54 @@
   </head>
 
     <body>
-        <nav class="navbar navbar-expand-md bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="/img/Social-logo.png" alt="Logo" width="50" height="80" class="d-inline-block align-text-center" />
-                        CLUB DEPORTIVO Y SOCIAL LUX 
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+        <header class="primary-header">
+            <div class="navigation">
+                <button class="navigation-toggle button-has-icon">
+                <span class="button-icon">
+                    <svg viewBox="0 0 20 20" class="button-icon-img button-toggle-img">
+                    <g data-name="Layer 1">
+                        <line y1="1"x2="20" y2="1" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" >
+                        </line>
+                        <line y1="7" x2="20" y2="7"  fill="none"  stroke="#000" stroke-miterlimit="10"  stroke-width="2" >
+                        </line>
+                        <line y1="13" x2="20" y2="13" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2" >
+                        </line>
+                        <line y1="19"x2="20" y2="19" fill="none" stroke="#000" stroke-miterlimit="10"stroke-width="2">
+                        </line>
+                    </g>
+                    </svg>
+                </span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-underline">
-                        <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search"/>
-                            <button class="btn btn-outline-success" type="submit">
-                                <span class="material-symbols-outlined"> search </span>
-                            </button>
+                <a href="" class="navigation-logo"><img src="/img/Social-logo.png" alt="Social lux logo" class="logo-image"/></a>
+                <nav class="main-navigation">
+                    <ul class="navigation-list">
+                        <li class="navigation-item">
+                        <a href="/index.html" class="navigation-link">INICIO</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">DISCIPLINAS</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">HISTORIA</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">CONTACTO</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">SPONSORS</a>
+                        </li>
+                        <li class="navigation-item">
+                        <a href="" class="navigation-link">MERCADITO EN EL RECUERDO</a>
+                        </li>
                     </ul>
+                </nav>
+                <div class="navigation-icon-group">
+                <button type="button" class="btn btn text-white button-has-icon">
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                </button>
                 </div>
             </div>
-        </nav>
+        </header>
         <main class="main_catalogo">
             <div class="section_catalogo">
                 <h2  class="subtitle">Escoja un producto para ver detalles ó filtre según preferencias</h2>
@@ -82,6 +114,43 @@
                 </div>
             </div>
         </main>
+        <footer class="footer">
+            <div class="container">
+              <div class="row">
+                <div class="footer-col">
+                  <h4>El Club</h4>
+                  <ul>
+                    <li><a href="#">Acerca de nosotros</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>Más información</h4>
+                  <ul>
+                    <li><a href="#">Cursos de la municipalidad</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>Tienda online</h4>
+                  <ul>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Devoluciones</a></li>
+                    <li><a href="#">Formas de pago</a></li>
+                  </ul>
+                </div>
+                <div class="footer-col">
+                  <h4>Seguinos</h4>
+                  <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </div>
+                </div>
+                <div class="footer-copyright">
+                  <p> Club deportivo y social Lux © 2023 Todos los derechos reservados ·</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="/app.js"></script>
         <script src="catalogo.js"></script>

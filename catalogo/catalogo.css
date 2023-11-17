@@ -3,6 +3,7 @@
     justify-content: center;
 }
 .section_catalogo{
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -74,7 +75,6 @@ div {
     transition: opacity 600ms ease;
     opacity: 0;
     position: absolute;
-    
 }
 .products_list{
     display: flex;
@@ -125,6 +125,7 @@ div {
     padding: 5px 0px;
     border-radius: 3px;
     margin-top: 5px;
+    color: #fff;
 }
 .btn_comprar:hover{
     background-color: #2c8f4e;
