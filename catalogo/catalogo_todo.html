@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"  rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="catalogo.css" >
+
+    <title>Catálogo</title>
+  </head>
+
+    <body>
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/Social-logo.png" alt="Logo" width="50" height="80" class="d-inline-block align-text-center" />
+                        CLUB DEPORTIVO Y SOCIAL LUX 
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-underline">
+                        <input class="form-control me-2" type="search" placeholder="Búsqueda" aria-label="Search"/>
+                            <button class="btn btn-outline-success" type="submit">
+                                <span class="material-symbols-outlined"> search </span>
+                            </button>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="main_catalogo">
+            <div class="section_catalogo">
+                <h2  class="subtitle">Escoja un producto para ver detalles ó filtre según preferencias</h2>
+                <hr>
+                <div class="filter_plus_products">
+                    <div class="filter_list">
+                        <div>
+                            <a href="#" class="btn-filter green" category="all">
+                                <span class="filter_span">Todo<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="btn-filter green" category="conjuntos">
+                                <span class="filter_span">Conjuntos<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="btn-filter green" category="remeras">
+                                <span class="filter_span">Remeras<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="btn-filter green" category="shorts">
+                                <span class="filter_span">Shorts<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="btn-filter green" category="pantalones">
+                                <span class="filter_span">Pantalones<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="btn-filter green" category="accesorios">
+                                <span class="filter_span">Accesorios<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="btn-filter green" category="otros">
+                                <span class="filter_span">Otros<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="products_list" id="productsList">
+                        <!-- dinamic content -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="/app.js"></script>
+        <script src="catalogo.js"></script>
+    </body>
+</html>
