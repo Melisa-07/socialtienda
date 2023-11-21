@@ -1,0 +1,160 @@
+
+/* LINEA VERTICAL */
+.timeline-title {
+    display: flex;
+    justify-content: center;
+    margin: 90px auto;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+  }
+  
+  .main-timeline-2 {
+    position: relative;
+  }
+  
+  /* LINEA VERTICAL */
+  .main-timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background-color: #1e7734;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* CONTAINER */
+  .timeline-2 {
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* CIRCULOS */
+  .timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -11px;
+    background-color: #1e7734;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* CONTAINER IZQUIERDA */
+  .left-2 {
+    padding: 0px 40px 20px 0px;
+    left: 0;
+  }
+  
+  /* CONTAINER DERECHA */
+  .right-2 {
+    padding: 0px 0px 20px 40px;
+    left: 50%;
+  }
+  
+  /* FLECHAS */
+  .left-2::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  
+  .right-2::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  
+  .right-2::after {
+    left: -14px;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .main-timeline-2::after {
+      left: 31px;
+    }
+  
+    .timeline-2 {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    
+    .timeline-2::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+    
+    .left-2::after,
+    .right-2::after {
+      left: 18px;
+    }
+  
+    .left-2::before {
+      right: auto;
+    }
+  
+  
+    .right-2 {
+      left: 0%;
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+   
+    .timeline-title{
+      margin-left: 8px;
+    }
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  /* BOTON MOSTRAR MAS */
+  .btn-timeline {
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    margin: 25px auto;
+    min-width:170px;
+    min-height: 46px; 
+    font-size: 1em;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: 400;
+    position: relative;
+    border: 2px solid #1e7734;
+    background-color: #1e7734;
+    color : #FFF;
+    overflow: hidden;
+  }
+  

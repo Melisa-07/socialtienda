@@ -13,24 +13,17 @@ window.addEventListener("resize", () => {
   }
 });
 
-//LINEA DE TIEMPO
-function mostrarMasMenos() {
-  const mostrarMasButton = document.getElementById('mostrarMas');
-  const hiddenItems = document.querySelectorAll('.hide');
 
-  if (mostrarMasButton.textContent === 'MOSTRAR MÁS') {
-    hiddenItems.forEach(item => item.style.display = 'block');
-    mostrarMasButton.textContent = 'MOSTRAR MENOS';
-  } else {
-    hiddenItems.forEach(item => item.style.display = 'none');
-    mostrarMasButton.textContent = 'MOSTRAR MÁS';
-  }
+
+//DISCIPLINAS
+const accordionHeaders = document.querySelectorAll('.accordion-header')
+const toggleActive = event => {
+  event.currentTarget.classList.toggle('active')
 }
-
-  
-
-
-
+const addToggleHandler = item => {
+  item.addEventListener('click', toggleActive)
+}
+Array.from(accordionHeaders).forEach(addToggleHandler)
 
 
 // const wrapper = document.querySelector(".sliderWrapper");
