@@ -134,3 +134,61 @@ div {
     font-size: 16px;
     transition: all 600ms ease;
 }
+
+@media (max-width: 768px) {
+    .filter_plus_products {
+        display: flex;
+        margin: 15px;
+        flex-direction: column;
+    }
+    .filter_list{
+        gap: 8px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .btn-filter {
+        width: 100px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.5s linear;
+        height: 40px;
+    }
+    .green::before {
+        left: 0;
+        top: -1;
+        content: "";
+        display: block;
+        width: 35%;
+        height: 20%;
+        background-color: #2c8f4e;
+        position: absolute;
+        z-index: -2;
+        transition: all 600ms ease;
+    }
+    .green:hover::before {
+        height: 100%;
+        top: 0;
+    }
+    .green:hover .arrow_update {
+        top: calc(50% - 10px);
+        left: calc(100% - 20px);
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 425px){
+    .filter_list {
+        margin: 10px 0px;
+        justify-content: flex-start;
+    }
+    .green::before {
+        width: 20%;
+        height: 15%;
+    }
+    .btn-filter {
+        width: 100px;
+        height: 35px;
+    }
+}
