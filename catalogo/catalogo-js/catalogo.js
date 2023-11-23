@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var productsListContainer = document.getElementById('productsList');
   var filterButtons = document.querySelectorAll('.btn-filter');
-  let carrito = [];
+
+  let carrito = JSON.parse(localStorage.getItem(('carrito'))) || [] ;
+
   let verCarrito = document.getElementById('verCarrito');
   let modalContainer = document.getElementById('modalContainer');
   let quantityCart = document.getElementById('quantityCart');
@@ -45,19 +47,19 @@ document.addEventListener('DOMContentLoaded', function () {
     visibilityLink.appendChild(visibilityIcon);
     productElement.appendChild(visibilityLink);
 
-    productElement.appendChild(createElement('img', undefined, undefined, producto.image));
+    productElement.appendChild(createElement('img', 'img-product', '', producto.image));
     productElement.appendChild(document.createElement('hr'));
     
     var productContent = createElement('div', 'contenido_producto');
-    productContent.appendChild(createElement('h2', undefined, producto.title));
-    productContent.appendChild(createElement('span', undefined, '$ ' + producto.price));
+    productContent.appendChild(createElement('h2', 'title-product', producto.title));
+    productContent.appendChild(createElement('span', 'price-product', '$ ' + producto.price));
     
     if (producto.size) {
       productContent.appendChild(document.createElement('br'));
-      productContent.appendChild(createElement('span', undefined, 'Tallas: ' + producto.size));
+      productContent.appendChild(createElement('span', 'sizes-prodcut', 'Talles: ' + producto.size));
     }
 
-    productContent.appendChild(createElement('p', undefined, producto.description));
+    productContent.appendChild(createElement('p', 'description-product', producto.description));
     productElement.appendChild(productContent);
 
     var buttonContainer = createElement('div', 'button-container');
@@ -84,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
       else{       
         carrito.push({
           id: producto.id,
+          image: producto.image,
           title: producto.title,
           price: producto.price,
           size: producto.size,
@@ -93,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
       console.log('click agregar', carrito);
       carritoCounter();
+      carritoStorage();
   });
   });
 
@@ -120,13 +124,41 @@ document.addEventListener('DOMContentLoaded', function () {
       carritoContent.innerHTML = `<img src="${producto.image}">
       <h3>${producto.title}</h3>
       <h4>${producto.price}</h4>
-      <p>Cantidad: ${producto.quantity}</p>
-      <p>Total: ${producto.quantity * producto.price}</p>
-      `;
+      <span class="less">-</span>
+      <p>${producto.quantity}</p>
+      <span class="more">+</span>
+      <p class="total_same_product">Total: ${(producto.quantity * producto.price).toFixed(2)}</p>      
+      `; 
 
       modalContainer.append(carritoContent);
+
+      let restar = carritoContent.querySelector('.less');
+      restar.addEventListener('click', () => {
+        if (producto.quantity !== 1) {
+          console.log('click - anda');
+          producto.quantity --;
+        }
+        carritoContent.querySelector('p').innerText = producto.quantity;
+        const totalProducto = carritoContent.querySelector('.total_same_product');
+        totalProducto.innerText = `Total: ${(producto.quantity * producto.price).toFixed(2)}`;
+        carritoCounter();
+        carritoStorage();
+        actualizarTotal();
+      });
+
+      let sumar = carritoContent.querySelector('.more');
+      sumar.addEventListener('click', () => {
+        console.log('click + anda');
+        producto.quantity ++;
+        carritoContent.querySelector('p').innerText = producto.quantity;
+        const totalProducto = carritoContent.querySelector('.total_same_product');
+        totalProducto.innerText = `Total: ${(producto.quantity * producto.price).toFixed(2)}`;
+        carritoCounter();
+        carritoStorage();
+        actualizarTotal();
+      });
       console.log(carrito.length);
-        
+
       let eliminarProd = document.createElement('span');
       eliminarProd.innerText = "X";
       eliminarProd.className = "delete_element";
@@ -141,20 +173,38 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         }
       carritoCounter();
-      console.log('eliminar producto', carrito);
+      carritoStorage();
+      actualizarTotal( );
+      
+      console.log('producto eliminado: ', producto);
+      console.log('prodcutos en el carrito: ', carrito);
       }
       eliminarProd.addEventListener('click', eliminarProducto)
     })   
-    const total = carrito.reduce((acumulador, p ) => acumulador + p.price.toFixed() * p.quantity, 0);
+    const total = carrito.reduce((acumulador, p ) => acumulador + p.price * p.quantity, 0);
     const totalPrice = document.createElement('div');
     totalPrice.className = 'total_content'
-    totalPrice.innerHTML = `Total a pagar: $ ${total} `;
+    totalPrice.innerHTML = `Total a pagar: $ ${total.toFixed(2)} `;
     modalContainer.append(totalPrice);
+
+    const actualizarTotal = () => {
+      const nuevoTotal = carrito.reduce((acumulador, p) => acumulador + p.price * p.quantity, 0);
+      totalPrice.innerHTML = `Total a pagar: $ ${nuevoTotal.toFixed(2)} `;
+    };
   }); 
-  console.log('carrito', carrito);
+  console.log('carrito: ', carrito);
 
   const carritoCounter = () => {
     quantityCart.style.display = 'block';
-    quantityCart.innerText = carrito.length;
-  }
-});
+    const carritoLength = carrito.length;
+    localStorage.setItem('carritoLength', JSON.stringify(carritoLength));
+    quantityCart.innerText = JSON.parse(localStorage.getItem('carritoLength'));
+    }
+
+    const carritoStorage = () => {
+      localStorage.setItem('carrito', JSON.stringify(carrito)); // guarda los elementos del carrito en el localStorage
+    }
+    JSON.parse(localStorage.getItem('carrito')); // toma los elementos del carrito guardados en el set
+    
+  carritoCounter();
+  });

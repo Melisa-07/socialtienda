@@ -53,11 +53,14 @@ hr{
     position: absolute;
     display: none;
 }
+.less, .more{
+    cursor: pointer;
+}
 .modal_container{
-    width: 75%;
-    margin: 5% 13%;
-    max-height: 90vh;
-    border-radius: 10px;
+    width: 70%;
+    margin: 5% 16%;
+    max-height: 80vh;
+    border-radius: 5px;
     background-color: rgb(218, 218, 218);
     display: flex;
     flex-direction: column;
@@ -84,14 +87,18 @@ hr{
 .modal_content{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin: 10px 3%;
-    height: 8vh;
+    justify-content: space-between;
+    margin: 5px 3%;
     align-items: center;
 }
 .modal_content>h3,h4, p{
     margin-bottom: unset;
     font-size: 20px;
+}
+.modal_content>img{
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
 }
 .delete_element{
     font-size: 13px;
