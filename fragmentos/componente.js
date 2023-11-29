@@ -1,24 +1,10 @@
-//MENU DESPLEGABLE EN DISPOSITIVOS PEQUEÑOS
-const toggleButton = document.querySelector(".navigation-toggle");
-const toggleNavbar = document.querySelector(".navigation");
-if (toggleButton && toggleNavbar) {
-  toggleButton.addEventListener("click", () => {
-    toggleNavbar.classList.toggle("active");
-  });
-}
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 1024) {
-    toggleNavbar.classList.remove("active");
-  }
-});
 
 class NavBar extends HTMLElement {
   connectedCallback() {
     this.innerHTML =
       `<html lang="en">
 <head>
-    <head>
+    
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -163,6 +149,10 @@ class NavBar extends HTMLElement {
                 border-top: 1px solid #000000;
               } */
               
+              .navigation-item a {
+                text-decoration: none;
+              }
+
               .navigation-link {
                 display: inline-block;
                 font-family: "Lato", sans-serif;
@@ -188,12 +178,7 @@ class NavBar extends HTMLElement {
               
               .navigation-icon-group i {
                 font-size: 20px;
-              }
-              
-              .item-inicio {
-                border-bottom: 2px solid #FFF;
-                margin-bottom: -2px;
-              }
+              }              
               
               @media (min-width: 41.875em) {
                 .navigation {
@@ -237,9 +222,11 @@ class NavBar extends HTMLElement {
                   padding-top: 0;
                 }
               }
+
+
               </style>
        
-      </head>
+      
 </head>
 <body>
     
@@ -292,7 +279,7 @@ class NavBar extends HTMLElement {
   
           <a href="" class="navigation-logo">
             <img
-              src="img/Social-logo.png"
+              src="../img/Social-logo.png"
               alt="Social lux logo"
               class="logo-image"
             />
@@ -316,7 +303,7 @@ class NavBar extends HTMLElement {
               </li>
               <li class="navigation-item">
                 <a
-                  href="historia/historia.html"
+                  href="historia.html"
                   class="navigation-link item-historia"
                   >HISTORIA</a
                 >
