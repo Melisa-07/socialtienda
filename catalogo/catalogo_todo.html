@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&family=Montserrat:wght@300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"/> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"  rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="stylesheet" href="catalogo.css" >
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="catalogo.css">
 
-    <title>Catálogo</title>
+    <title>Tienda</title>
   </head>
 
     <body>
@@ -46,6 +46,9 @@
                         <a href="" class="navigation-link">DISCIPLINAS</a>
                         </li>
                         <li class="navigation-item">
+                          <a href="catalogo_todo.html" class="navigation-link tienda">TIENDA</a>
+                          </li>
+                        <li class="navigation-item">
                         <a href="" class="navigation-link">HISTORIA</a>
                         </li>
                         <li class="navigation-item">
@@ -71,7 +74,7 @@
                 <div class="subtitle_carrito">
                     <h2  class="subtitle">Escoja un producto para ver detalles ó filtre según preferencias</h2>
                     <div class="contenedor_carrito">
-                        <span class="material-symbols-outlined carrito" id="verCarrito">shopping_cart <span class="quantityCart" id="quantityCart" ></span></span>
+                        <span class="material-symbols-outlined carrito" id="verCarrito">shopping_bag <span class="quantityCart" id="quantityCart" ></span></span>
                     </div>
                 </div>
                 <hr>
@@ -79,46 +82,33 @@
                     <!-- dinamic modal content -->
                 </div>
                 <div class="filter_plus_products">
-                    <div class="filter_list">
-                        <div>
-                            <a href="#" class="btn-filter green" category="all">
-                                <span class="filter_span">Todo<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
-                            </a>
+                    <div class="search_price_categories">
+                        <div class="search_input">
+                            <input type="search" id="productSearch" placeholder="Ej: conjuntos">
+                            <span class="material-symbols-outlined lupa" id="searchButton">search</span>
                         </div>
-                        <div>
-                            <a href="#" class="btn-filter green" category="conjuntos">
-                                <span class="filter_span">Conjuntos<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#" class="btn-filter green" category="remeras">
-                                <span class="filter_span">Remeras<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#" class="btn-filter green" category="shorts">
-                                <span class="filter_span">Shorts<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#" class="btn-filter green" category="pantalones">
-                                <span class="filter_span">Pantalones<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#" class="btn-filter green" category="accesorios">
-                                <span class="filter_span">Accesorios<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#" class="btn-filter green" category="otros">
-                                <span class="filter_span">Otros<span class="material-symbols-outlined arrow_update">arrow_right_alt</span></span>
-                            </a>
+                        <div class="select_price_category">
+                            <select class="select_price" id="priceFilter" name="priceFilter">
+                                <option value="asc">$ menor a mayor</option>
+                                <option value="desc">$ mayor a menor</option>
+                            </select>
+                            <select class="select_category" id="categoryFilter" name="categoryFilter">
+                                <option value="all">Todos los productos</option>
+                                <option value="conjuntos" category="conjuntos">Conjuntos</option>
+                                <option value="remeras"  category="remeras">Remeras</option>
+                                <option value="shorts" category="shorts">Shorts</option>
+                                <option value="pantalones" category="pantalones">Pantalones</option>
+                                <option value="accesorios" category="accesorios">Accesorios</option>
+                                <option value="otros" category="otros">Otros</option>
+                            </select>
                         </div>
                     </div>
+                </div>
+                <div id="noResultsMessage" style="display: none;">No hemos encontrado nada que coincida con tu búsqueda. ¡Inténtalo nuevamente!</div>
                     <div class="products_list" id="productsList">
                         <!-- dinamic products content -->
                     </div>
+                    <div id="suggestionContainer"></div>
                 </div>
             </div>
         </main>
@@ -158,10 +148,10 @@
               </div>
             </div>
           </footer>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="../app.js"></script>
-        <script src="catalogo-js/productos.js"></script>
-        <script src="catalogo-js/catalogo.js"></script>
+          
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+          <script src="../app.js"></script>
+          <script src="catalogo-js/productos.js"></script>
+          <script src="catalogo-js/catalogo.js"></script>
     </body>
 </html>
